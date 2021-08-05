@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-file-upload',
@@ -11,7 +12,8 @@ export class FileUploadComponent implements OnInit {
 
   selectedFile = null;
 
-  constructor() { }
+  constructor(private httpClient: HttpClient){
+  }
 
   ngOnInit() {
   }
@@ -22,6 +24,9 @@ export class FileUploadComponent implements OnInit {
 
   onUpload(scope){
     console.log(this.selectedFile);
+    var t1 = this.httpClient.get('www.google.com');
+    console.log(t1);
+    //this.httpClient.post('');
   }
 
 }
