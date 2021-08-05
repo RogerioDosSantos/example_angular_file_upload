@@ -1,0 +1,19 @@
+# Execute (Linux)
+
+version: "3"
+services:
+
+  service_01:
+    image: "${registry}/angular_environment_variable_example:linux"
+
+  service_02:
+    image: "${registry}/angular_environment_variable_example:linux"
+    stdin_open: true
+    tty: true
+    ports:
+      - "8001:80"
+    environment:
+      - "RUNNINGENVIRONMENT=Service 02"
+      - "VAR01=V21"
+      - "VAR02=V22"
+      - "VAR03=V23"

@@ -1,0 +1,19 @@
+# Build (Linux)
+
+version: "3"
+services:
+
+  image_upload:
+    image: "${registry}/angular_file_upload_example:linux"
+    build:
+      context: ../
+      dockerfile: ./build/build_linux.docker
+    stdin_open: true
+    tty: true
+    ports:
+      - "8000:80"
+    environment:
+      - "RUNNINGENVIRONMENT=Service 01"
+      - "VAR01=V11"
+      - "VAR02=V12"
+      - "VAR03=V13"
